@@ -23,7 +23,7 @@ const start = async () => {
         await mongoose.connection.syncIndexes()
 
         const app = express()
-
+        console.log(CLIENT_URL)
         app.use(express.json())
         app.use(cookieParser())
         app.use(cors({

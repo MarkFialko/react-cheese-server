@@ -8,5 +8,5 @@
   "MAIL_USER" : "markfialkofialko@gmail.com",
   "MAIL_PASSWORD" : "gxahqoxlcbzuacys",
   "API_URL" : "http://localhost:5000",
-  "CLIENT_URL" : "http://localhost:3000"
+  "CLIENT_URL" : "https://react-cheese-client.vercel.app"
 }
