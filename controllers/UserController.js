@@ -42,7 +42,7 @@ export const login = async (req, res, next) => {
 
         res.cookie("refreshToken", userData.refreshToken, {maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true})
         console.log("сохранили токен в куки", userData.refreshToken)
-        console.log(res.cookie)
+        console.log(res.cookie.json())
         res.json(userData)
 
     } catch (err) {
