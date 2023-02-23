@@ -127,7 +127,7 @@ export const refresh = async (req, res, next) => {
     try {
 
         const {refreshToken} = req.cookies;
-
+        console.log('cookies', req.cookies)
         const userData = await UserService.refresh(refreshToken)
 
         res.cookie("refreshToken", userData.refreshToken, {maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true})
