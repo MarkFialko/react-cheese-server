@@ -10,6 +10,7 @@ import ingredientRouter from "./router/ingredientRouter.js";
 
 const PORT = config.get("SERVER_PORT")
 const DB_URL = config.get("DB_URL")
+const CLIENT_URL = config.get("CLIENT_URL")
 
 const start = async () => {
 
@@ -27,7 +28,7 @@ const start = async () => {
         app.use(cookieParser())
         app.use(cors({
             credentials: true,
-            origin: config.get("CLIENT_URL")
+            origin: CLIENT_URL
         }))
 
         const storage = multer.diskStorage({
