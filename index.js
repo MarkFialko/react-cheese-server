@@ -8,12 +8,9 @@ import authRouter from "./router/authRouter.js";
 import errorsMiddleware from "./middleware/errorsMiddleware.js";
 import ingredientRouter from "./router/ingredientRouter.js";
 
-
 const PORT = process.env.PORT || config.get("SERVER_PORT")
 const DB_URL = process.env.DB_URL || config.get("DB_URL")
 const CLIENT_URL = process.env.CLIENT_URL ||  config.get("CLIENT_URL")
-
-console.log(config.get("CLIENT_URL"))
 
 const start = async () => {
 
@@ -26,7 +23,6 @@ const start = async () => {
         await mongoose.connection.syncIndexes()
 
         const app = express()
-        console.log(CLIENT_URL)
         app.use(express.json())
         app.use(cookieParser())
         app.use(cors({
