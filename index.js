@@ -10,9 +10,9 @@ import ingredientRouter from "./router/ingredientRouter.js";
 
 console.log('proccess.env.NODE-ENV', process.env.NODE_ENV)
 
-consol.log(process.env.PORT)
-consol.log(process.env.DB_URL)
-consol.log(process.env.CLIENT_URL)
+console.log(process.env.PORT)
+console.log(process.env.DB_URL)
+console.log(process.env.CLIENT_URL)
 
 const PORT = process.env.PORT || config.get("SERVER_PORT")
 const DB_URL = process.env.DB_URL || config.get("DB_URL")
