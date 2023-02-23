@@ -17,7 +17,7 @@ export const registration = async (req, res, next) => {
         const userData = await UserService.registration(email, password, fullName)
 
         res.cookie("refreshToken", userData.refreshToken, {maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true})
-
+        console.log(res.cookie)
         res.json(userData)
 
     } catch (err) {
@@ -42,6 +42,7 @@ export const login = async (req, res, next) => {
 
         res.cookie("refreshToken", userData.refreshToken, {maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true})
         console.log("сохранили токен в куки", userData.refreshToken)
+        console.log(res.cookie)
         res.json(userData)
 
     } catch (err) {
