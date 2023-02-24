@@ -1,7 +1,6 @@
 import nodeMailer from "nodemailer"
-import UserModel from "../models/User.js"
 import config from "config";
-import {Error} from "mongoose";
+
 class MailService {
 
     constructor() {

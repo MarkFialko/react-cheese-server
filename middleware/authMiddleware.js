@@ -8,7 +8,6 @@ export default (req, res, next) => {
             return next(ApiError.UnauthorizedError())
         }
         const userData = TokenService.validateAccessToken(accessToken);
-        console.log(userData)
         if (!userData) {
             return next(ApiError.UnauthorizedError())
         }

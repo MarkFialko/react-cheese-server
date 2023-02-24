@@ -7,6 +7,7 @@ import cookieParser from 'cookie-parser'
 import authRouter from "./router/authRouter.js";
 import errorsMiddleware from "./middleware/errorsMiddleware.js";
 import ingredientRouter from "./router/ingredientRouter.js";
+import basketRouter from "./router/basketRouter.js";
 
 const PORT = process.env.PORT || config.get("SERVER_PORT")
 const DB_URL = process.env.DB_URL || config.get("DB_URL")
@@ -52,6 +53,7 @@ const start = async () => {
 
         app.use("/auth", authRouter)
         app.use('/ingredient', ingredientRouter)
+        app.use('/basket', basketRouter)
         app.use(errorsMiddleware)
 
         app.listen(PORT, () => console.log(`Server started on port ${PORT}`))

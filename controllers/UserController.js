@@ -22,7 +22,6 @@ export const registration = async (req, res, next) => {
             maxAge: 30 * 24 * 60 * 60 * 1000,
             httpOnly: true
         })
-        console.log(res.cookie)
         res.json(userData)
 
     } catch (err) {
@@ -49,7 +48,6 @@ export const login = async (req, res, next) => {
             sameSite: 'none',
             secure: true, maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true
         })
-        console.log("сохранили токен в куки", userData.refreshToken)
         res.json(userData)
 
     } catch (err) {
@@ -59,7 +57,6 @@ export const login = async (req, res, next) => {
 
 export const getMe = async (req, res, next) => {
     try {
-        console.log(req.user)
         const userId = req.user.id
         const {user, address} = await UserService.getMe(userId)
         res.json({
@@ -135,7 +132,6 @@ export const refresh = async (req, res, next) => {
     try {
 
         const {refreshToken} = req.cookies;
-        console.log('cookies', req.cookies)
         const userData = await UserService.refresh(refreshToken)
 
         res.cookie("refreshToken", userData.refreshToken, {
@@ -143,7 +139,6 @@ export const refresh = async (req, res, next) => {
             secure: true,
             maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true
         })
-        console.log("сохранили токен в куки")
         res.json(userData)
 
     } catch (err) {

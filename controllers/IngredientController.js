@@ -29,5 +29,18 @@ export const create = async (req, res, next) => {
 
 }
 
+export const getOne = async (req,res,next) => {
+    try {
+
+        const id = req.params.id
+        const ingredient = await IngredientService.getOne(id)
+
+        res.json(ingredient)
+
+    } catch (err) {
+        next(err)
+    }
+}
+
 
 
